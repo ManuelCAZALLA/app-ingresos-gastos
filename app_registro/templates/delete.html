@@ -3,21 +3,21 @@
 <table>
     <tr>
         <td>Fecha:</td>
-        <td>{{registros[1]}}:</td>
+        <td>{{registros["fecha"]}}:</td>
         
     </tr>
     <tr>
         <td>Concepto:</td>
-        <td>{{registros[2]}}:</td>
+        <td>{{registros["concepto"]}}:</td>
         
     </tr>
     <tr>
         <td>Cantidad:</td>
-        <td>{{registros[3]}}:</td>
+        <td>{{registros["cantidad"]}}:</td>
         
     </tr>
 </table>
-<form action="/delete/{{registros[0]}}" method="post">
+<form action="/delete/{{registros['id']}}" method="post">
     <button type="submit">Borrar Registro</button>
 </form>
 <a href="/">Volver</a>
