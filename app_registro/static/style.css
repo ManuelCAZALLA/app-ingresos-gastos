@@ -1,0 +1,16 @@
+table, th, td {
+    border:1px solid rgb(5, 237, 63);
+  }
+  .miEstilo{
+      color: red;
+      text-decoration:underline;
+  }
+  li.error{
+      color: rgb(248, 5, 5);
+      text-decoration:underline;
+  }
+
+  #quantity{
+      color: blue;
+  }
+

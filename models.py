@@ -28,11 +28,17 @@ def select_by(id):
             registro_buscado = registro
 
     diccionario = dict()
-    diccionario["id"] = registro_buscado[0]#id
-    diccionario["date"] = registro_buscado[1]#id
-    diccionario["concept"] = registro_buscado[2]#id
-    diccionario["quantity"] = registro_buscado[3]#id
-
+    
+    nombres = ["id","fecha","concepto","cantidad"]
+    
+    for i in range(len(nombres)) : # esto es igual que el diccionario comentado abajo
+        diccionario[nombres[i]]= registro_buscado[i]
+        
+    '''diccionario["id"] = registro_buscado[0]
+    diccionario["fecha"] = registro_buscado[1]
+    diccionario["concepto"] = registro_buscado[2]
+    diccionario["cantidad"] = registro_buscado[3]
+'''
 
 
     mifichero.close()
@@ -44,7 +50,7 @@ def delete_by(id):
     borrará el registro cuyo id coincide con el de la entrada en el fichero MOVIMIENTOS_FILE
     """
     fichero_old =  open(Movimientos_File,'r')#acceder al csv de registros
-    fichero = open(ModuleNotFoundError,'w',newline="")#acceder a un archivo auxiliar
+    fichero = open(Movimientos_File,'w',newline="")#acceder a un archivo auxiliar
 
     csvReader= csv.reader(fichero_old, delimiter=',',quotechar='"')
     csvWriter = csv.writer( fichero , delimiter=',',quotechar='"')

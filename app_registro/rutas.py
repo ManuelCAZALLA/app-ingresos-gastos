@@ -28,9 +28,9 @@ def create():
             return render_template("new.html",pageTitle="Alta",typeAction="Alta",typeButon="Guardar",msgError=error,dataForm=request.form)
         else: 
 
-           insert([request.form['date'],
-                   request.form['concept'],
-                   request.form['quantity']])    
+           insert([request.form['fecha'],
+                   request.form['concepto'],
+                   request.form['cantidad']])    
 
         
 
@@ -65,9 +65,7 @@ def edit(id):
 @app.route("/delete/<int:id>", methods=["GET","POST"])
 def remove(id):
 
-    #1-consultar en data/movimientos.csv y recuperar el registro con id de la peticion
-    #2-devolver al formulario html para borrar que los campos no sean modificables
-    #3-tendria un boton para confirmar el borrado, si da accion a este boton borrar el registro dado
+    
     if request.method == "GET":
 
         registro_buscado = select_by(id)
@@ -81,10 +79,6 @@ def remove(id):
         delete_by(id)
         return redirect("/")     
         
-
-
-
-
 
 def validateForm(requestForm):
     hoy = date.today().isoformat()

@@ -7,13 +7,13 @@
 
 <form action="{{urlForm}}" method="post">
         <label for="fecha">Fecha:</label>
-        <input type="date" name="date" value="{{dataForm.date}}" required>
+        <input type="date" name="fecha" value="{{dataForm.fecha}}" required>
         <br>
         <label for="concepto">Concepto:</label>
-        <input type="text" name="concept" placeholder="Ingrese Concepto" value="{{dataForm.concept}}">
+        <input type="text" name="concepto" placeholder="Ingrese Concepto" value="{{dataForm.concepto}}">
         <br>
         <label for="cantidad">Cantidad:</label>
-        <input type="number" name="quantity" placeholder="Ingrese Cantidad" step="0.01" value="{{dataForm.quantity}}">
+        <input type="number" name="cantidad" placeholder="Ingrese Cantidad" step="0.01" value="{{dataForm.cantidad}}">
         <br>
         <button type="submit">{{typeButon}}</button>
 </form>
@@ -23,7 +23,7 @@
 <article>
         <ul>
            {% for item in msgError %}     
-                <li>{{item}}</li>
+                <li class="error">{{item}}</li>
            {% endfor %}     
         </ul>
 </article>
